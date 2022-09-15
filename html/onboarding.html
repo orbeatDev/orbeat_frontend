@@ -9,18 +9,35 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/onboarding.css">
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 
     function checkStart() {
         var start = document.name_sub.username.value;
+        var jsonStart = {"nickname" : start};
         if(start==""){
             alert("이름을 입력해 주세요");
             documet.name_sub.username.focus();
             return;
         }
         else {
-            document.getElementById('name_sub_id').submit();
-            location.href="battle.html";
+            alert(JSON.stringify(jsonStart));
+            $.ajax({
+                url: 'http://localhost:8899/user/sign-up',
+                type: 'post',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(jsonStart),
+                success: function afterSuccess(resp) {
+                    console.log(resp);
+                },
+                error: function afterError(resp) {
+                    console.log("ERROR");
+                    console.log(resp);
+                }
+            });
+            //document.getElementById('name_sub_id').submit();
+            //location.href="battle.html";
         }   
     } 
 
