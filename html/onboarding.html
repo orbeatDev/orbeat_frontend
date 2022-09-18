@@ -30,6 +30,8 @@
                 success: function afterSuccess(resp) {
                     console.log(resp);
                     if(resp.isSuccess === true) {
+                        var sendData = {"nickname" :  start, "round_number" : 1};
+                        localStorage.setItem("battle-data", JSON.stringify(sendData));
                         location.href = "battle.html";
                     } else {
                         alert(resp.message);
