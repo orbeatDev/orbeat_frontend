@@ -28,6 +28,24 @@
        -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
             filter: brightness(1.8) grayscale(1) opacity(.7);
 }
+@media (max-width:1799px) {
+    /*PC*/
+    .drinkcard-cc {
+        width: 72px;
+    }
+}
+@media (max-width:1023px) {
+    /*테블릿*/
+    .drinkcard-cc {
+        width: 55px;
+    }
+}
+@media (max-width:639px) {
+    /*모바일*/
+    .drinkcard-cc {
+        width: 47px;
+    }
+}
 .drinkcard-cc:hover{
     -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
        -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
