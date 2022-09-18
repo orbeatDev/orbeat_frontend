@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>battle_round4</title>
+    <link rel="stylesheet" href="../css/timeline.css">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/votebtn.css">
+   
+
+</head>
+
+<body>
+  <div id="main">
+    <!-- 로고 -->
+    <div class="logo">Orbeat</div>
+    <!-- 타이틀 --> 
+    <div id="title">
+        <div class="titles">취향에 맞는 음악을 선택해주세요.</div>
+        <!--round 작성-->
+        <div class="title_sub">Round 4</div>
+    </div>
+
+        <div id="music_position">
+          <div id="music_1">
+            
+            <!--음원--> 
+            <audio class="audio" src="../mp3/01.mp3"></audio>
+            <!--앨범 이미지-->
+            <img class="img_thumbnail_1" src="../img/pc_thumbnail1.png">
+            <!--재생 버튼-->
+            <div class="btn_stop">
+              <img class="btn_img" src="../img/btn_stop.png">
+            </div>
+          
+            <!-- 노래제목 -->
+            <!-- 노래제목 길이 확인하기 -->
+            <div id="title_of_song">
+              노래명(feat.ddddddfdfdff)
+            </div>
+            <!-- 아티스트 -->
+            <div id="singer">
+              가수명가수명가수명가수명가수명
+            </div>
+
+            <!--timeline-->
+            <div class="timeline_cover">
+              <input type="range" class="timeline" max="100" value="0">
+            </div>
+            
+            <!--select btn-->
+            <div id="select">
+              <div class="cc-selector">
+                <input id="visa" type="radio" name="credit-card" value="visa" />
+                <label class="drinkcard-cc visa" for="visa"></label>
+            </div>
+          </div>
+          
+          
+
+          </div>
+
+            
+          <div id="music_2">
+            
+              <!--음원-->
+              <audio class="audio1" src="../mp3/02.mp3"></audio>
+              <!--앨범 이미지-->
+              <img class="img_thumbnail_1" src="../img/pc_thumbnail2.png">
+              <!--재생 버튼-->
+              <div class="btn_stop1">
+                <img class="btn_img" src="../img/btn_stop.png">
+              </div>
+
+              <!-- 노래제목 -->
+              <!-- 노래제목 길이 확인하기 -->
+              <div id="title_of_song">
+                노래명(feat.ddddddfdfdff)
+              </div>
+
+              <!-- 아티스트 -->
+              <div id="singer">
+                가수명가수명가수명가수명가수명
+              </div>
+
+
+              <!-- 5초 안내 박스
+              <div id="five_seconds">
+                5초 뒤에<br>
+                선택할 수 있어요.
+              </div>
+               -->
+             
+              
+              <!--timeline-->
+              <div class="timeline_cover">
+                <input type="range" class="timeline1" max="100" value="0">
+              </div>
+              
+               <!--select btn-->
+              <div id="select">
+                <div class="cc-selector">
+                  <input id="mastercard" type="radio" name="credit-card" value="mastercard" />
+                  <label class="drinkcard-cc mastercard"for="mastercard"></label>
+                </div>
+              </div>
+          </div>
+
+                
+        </div>
+        <div id="btn_next" onclick="location.href='battle_round5.html'">
+          다음 라운드로 이동
+        </div>
+  </div>
+  <script src="../js/battle.js"></script>
+  
+    <script>
+      /*5초 후 버튼 활성화 (미완성)*/
+      function myfunction() {
+        setTimeout(function() {
+        
+        var element = document.getElementById("five_seconds");
+        element.classList.remove("example");
+        
+      },5000);  
+      }
+
+      
+    </script>
+
+</body>
+
+</html>
