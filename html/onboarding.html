@@ -21,7 +21,6 @@
             return;
         }
         else {
-            alert(JSON.stringify(jsonStart));
             $.ajax({
                 url: 'http://localhost:8899/user/sign-up',
                 type: 'post',
@@ -30,14 +29,17 @@
                 data: JSON.stringify(jsonStart),
                 success: function afterSuccess(resp) {
                     console.log(resp);
+                    if(resp.isSuccess === true) {
+                        location.href = "battle.html";
+                    } else {
+                        console.log(resp.message);
+                    }
                 },
                 error: function afterError(resp) {
                     console.log("ERROR");
                     console.log(resp);
                 }
             });
-            //document.getElementById('name_sub_id').submit();
-            //location.href="battle.html";
         }   
     } 
 
