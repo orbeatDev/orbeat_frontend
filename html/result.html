@@ -8,8 +8,8 @@
     <title>Orbeat</title>
     <link rel="stylesheet" href="../css/result.css">
 </head>
-
-<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<body onLoad='init()'>
     <div id="main">
         <div id="top">
             <div id="logo">Orbeat</span>
@@ -162,5 +162,25 @@
     function star(){
 
     };
+
+    function init() {
+        //request body는 추후 localStorage 값과 혼합하여 생성
+        var reqeustBody;
+
+        $.ajax({
+            url: 'http://orbeat.co.kr/api/result/get',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(reqeustBody);
+            success: function afterSuccess(resp) {
+                console.log(resp.results);
+            },
+            error: function afterError(resp) {
+                alert('오류가 발생했습니다');
+                console.log(resp);
+            }
+        })
+    }
 </script>
 </html>
