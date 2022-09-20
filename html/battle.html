@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/timeline.css">
     <link rel="stylesheet" href="../css/default.css">
     <link rel="stylesheet" href="../css/votebtn.css">
-   
+
 
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -17,7 +17,7 @@
   <div id="main">
     <!-- 로고 -->
     <div class="logo">Orbeat</div>
-    <!-- 타이틀 --> 
+    <!-- 타이틀 -->
     <div id="title">
         <div class="titles">취향에 맞는 음악을 선택해주세요.</div>
         <!--round 작성-->
@@ -26,16 +26,16 @@
 
         <div id="music_position">
           <div id="music_1">
-            
-            <!--음원--> 
-            <audio class="audio" src="../mp3/01.mp3"></audio>
+
+            <!--음원-->
+            <audio class="audio" src="https://orbeat-s3.s3.ap-northeast-2.amazonaws.com/music/%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B2%E1%86%AB_Call_This_Love_-_%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%89%E1%85%A2_YUNSAE.mp3"></audio>
             <!--앨범 이미지-->
             <img class="img_thumbnail_1" src="../img/pc_thumbnail1.png">
             <!--재생 버튼-->
             <div class="btn_stop">
               <img class="btn_img" src="../img/btn_stop.png">
             </div>
-          
+
             <!-- 노래제목 -->
             <!-- 노래제목 길이 확인하기 -->
             <div id="title_of_song">
@@ -50,7 +50,7 @@
             <div class="timeline_cover">
               <input type="range" class="timeline" max="100" value="0">
             </div>
-            
+
             <!--select btn-->
             <div id="select">
               <div class="cc-selector">
@@ -58,14 +58,14 @@
                 <label class="drinkcard-cc visa" for="visa"></label>
             </div>
           </div>
-          
-          
+
+
 
           </div>
 
-            
+
           <div id="music_2">
-            
+
               <!--음원-->
               <audio class="audio1" src="../mp3/02.mp3"></audio>
               <!--앨범 이미지-->
@@ -93,13 +93,13 @@
                 선택할 수 있어요.
               </div>
                -->
-             
-              
+
+
               <!--timeline-->
               <div class="timeline_cover">
                 <input type="range" class="timeline1" max="100" value="0">
               </div>
-              
+
                <!--select btn-->
               <div id="select">
                 <div class="cc-selector">
@@ -109,7 +109,7 @@
               </div>
           </div>
 
-                
+
         </div>
         <div id="btn_next" onclick="">
           다음 라운드로 이동
@@ -120,30 +120,33 @@
       /*5초 후 버튼 활성화 (미완성)*/
       function myfunction() {
         setTimeout(function() {
-        
+
         var element = document.getElementById("five_seconds");
         element.classList.remove("example");
-        
-      },5000);  
+
+      },5000);
       }
 
-        function init() {
-                var initData;
-                $.ajax({
-                        url: 'http://orbeat.co.kr/api/battle/round/get',
-                        type: 'post',
-                        dataType: 'json',
-                        contentType: 'application/json',
-                        data: localStorage.getItem("battle-data"),
-                        success: function afterSuccess(resp) {
-                                console.log(resp);
-                                initData = resp.results;
-                        },
-                        error: function afterError(resp) {
-                                console.log(resp);
-                        }
-                });
-        }
+      function init() {
+        var initData;
+        $.ajax({
+          url: 'http://orbeat.co.kr/api/battle/round/get',
+          type: 'post',
+          dataType: 'json',
+          contentType: 'application/json',
+          data: localStorage.getItem("battle-data"),
+          success: function afterSuccess(resp) {
+            console.log(resp);
+            initData = resp.results;
+            console.log(initData);
+          },
+          error: function afterError(resp) {
+            console.log(resp);
+          }
+        });
+
+        console.log(localStorage.getItem("battle-data"));
+      }
 
 
     </script>
